@@ -6,6 +6,7 @@ let isAlive = true
 let message = ""
 let messageEl = document.getElementById("message")
 let sumEl = document.getElementById("sumEl")
+let cardEl = document.getElementById("cardEl")
 
 function startGame(){
 
@@ -22,6 +23,7 @@ function startGame(){
     }
     messageEl.textContent = message
     sumEl.textContent = "Sum:" + sum
+    cardEl.textContent = "Cards:" + firstCard +", " + secondCard
     
 }
 
