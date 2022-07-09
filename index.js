@@ -7,6 +7,14 @@ let messageEl = document.getElementById("message")
 let sumEl = document.getElementById("sumEl")
 let cardEl = document.getElementById("cardEl")
 
+let player = {
+    name: "Eddy",
+    chips: 145
+}
+
+let playerEl = document.getElementById("playerEl")
+playerEl.textContent = player.name + ": $" + player.chips
+
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
 
@@ -51,10 +59,15 @@ function renderGame() {
 
 }
 function newCard() {
-    let card = getRandomCard()
-    sum += card
-    cards.push(card)
-    renderGame()
+    if (isAlive === true && hasBlackJack === false) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        renderGame()
+    }else{
+        alert("You are out of the game")
+    }
+
 
 }
 
@@ -152,9 +165,38 @@ function newCard() {
 // }
 // rollDice()
 
-let hasSolvedChallenge = false
-let hasHintsLeft = false
+// let hasSolvedChallenge = false
+// let hasHintsLeft = false
 
-if(hasSolvedChallenge === false && hasHintsLeft === false){
-    console.log("Showing Certificates...............")
-}
+// if(hasSolvedChallenge === false && hasHintsLeft === false){
+//     console.log("Showing Certificates...............")
+// }
+
+// let likesDocumentaries = false
+// let likesStartups = true
+
+// if(likesDocumentaries === true || likesStartups === true){
+//     console.log("hey Check out this new movie, think you might like")
+// }
+
+// let course = {
+//     title: "learn css grid for free",
+//     lessons: 16,
+//     creator:"Edidiong",
+//     length: 63,
+//     level: 2, 
+//     isFree: true,
+//     tags:["html", "css"]
+// }
+
+// console.log(course.length)
+
+// let airBnb = {
+//     location: "Uyo",
+//     price: 140,
+//     isClass: true,
+//     tags: ["yes", "no"]
+// }
+
+// console.log(airBnb.price)
+// console.log(airBnb.tags)
